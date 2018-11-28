@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "probot": "7.4.0"
+  },
+  "devDependencies": {
+    "@types/bunyan": "1.8.5",
+    "@types/node": "10.12.10",
+    "prettier": "1.15.2",
+    "text-runner": "3.6.0",
+    "tslint": "5.11.0",
+    "typescript": "3.1.6"
+  }
+}
