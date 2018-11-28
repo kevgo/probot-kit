@@ -20,8 +20,9 @@ lint:  # lints the code base
 	node_modules$/.bin$/tsc --noEmit
 	node_modules$/.bin$/tslint --project tsconfig.json
 	node_modules$/.bin$/prettier -l '*.md'
-	node_modules$/.bin$/prettier -l '*.yml'
+	# node_modules$/.bin$/prettier -l '*.yml'
 	node_modules$/.bin$/prettier -l '*.json'
 	node_modules$/.bin$/prettier -l 'src/**'
 
 spec: lint    # runs all tests
+	node_modules$/.bin$/text-run
