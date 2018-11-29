@@ -38,6 +38,6 @@
   "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "make"
+    "prepublishOnly": "make"
   }
 }
