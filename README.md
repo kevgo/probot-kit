@@ -23,23 +23,23 @@ _A collection of high-level tools to build Github bots using [Probot](https://pr
   returns the name of the repository in which the activity described by the context happens,
   in the format {repoName}/{branchName}
 
-* **getRepoName** <br>
+* **[getRepoName](src/get-repo-name.ts)** <br>
   Returns the name of the repository in which the activity described by the context happens,
   in the format {repoName}/{branchName}.
 
-* **iterateCurrentCommitFiles** <br>
+* **[iterateCurrentCommitFiles](src/iterate-current-commit-files.ts)** <br>
   iterates all files of the current commit
 
-* **loadBotConfig** <br>
+* **[loadBotConfig](src/load-bot-config.ts)** <br>
   Loads the bot configuration file with the given name.
   The file is assumed to be in YML format.
   Returns the file content as a JS object.
 
-* **loadFile** <br>
+* **[loadFile](src/load-file.ts)** <br>
   Loads the given file from GitHub.
   Returns the content and the SHA.
 
-* **updateFile** <br>
+* **[updateFile](src/update-file.ts)** <br>
   stores the updated content for the given file in the given branch
 
 </a>
