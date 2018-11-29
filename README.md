@@ -6,20 +6,20 @@ _A collection of high-level tools to build Github bots using [Probot](https://pr
 
 <a textrun="all-exported">
 
-- **downloadPatch** <br>
+- **[downloadPatch](src/download-patch.ts)** <br>
   exports an async function that downloads the patch for the given SHA
 
-- **findPatchLine** <br>
+- **[findPatchLine](src/find-patch-line.ts)** <br>
   Takes a line number in a file
   and returns the corresponding line number in the patch file
   according to https://developer.github.com/v3/pulls/comments/#create-a-comment
   or falsy if the patch doesn't contain the given line number.
   The patch must be downloaded by the downloadPatch function.
 
-* **getBranchName** <br>
+* **[getBranchName](src/get-branch-name.ts)** <br>
   determines the name of the branch that got pushed to Github
 
-* **getRepoBranchName** <br>
+* **[getRepoBranchName](src/get-repo-branch-name.ts)** <br>
   returns the name of the repository in which the activity described by the context happens,
   in the format {repoName}/{branchName}
 
