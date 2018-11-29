@@ -1,7 +1,7 @@
 {
   "name": "probot-kit",
   "description": "A collection of high-level tools to build Github bots using Probot",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
   "dependencies": {
     "follow-redirects": "1.5.10",
