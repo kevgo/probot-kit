@@ -44,10 +44,6 @@ function isFile(filename) {
   return fs.statSync(path.join('..', 'src', filename)).isFile()
 }
 
-function functionName(filename) {
-  return camelCase(filename.replace('.ts', ''))
-}
-
 function documentedExports(nodes) {
   let inLink = false
   let signature = ''
@@ -73,6 +69,7 @@ function documentedExports(nodes) {
           .join(' ')
           .replace(/\.$/, '')
           .replace(/^\s*/, '')
+          .replace(/\s+/g, ' ')
           .toLocaleLowerCase()
       })
       signature = ''

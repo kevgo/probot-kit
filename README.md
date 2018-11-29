@@ -13,7 +13,7 @@ _A collection of high-level tools to build Github bots using [Probot](https://pr
   Takes a line number in a file and a patch downloaded by the downloadPatch function.
   Returns the line number that Github expects for comments on this patch
   according to https://developer.github.com/v3/pulls/comments/#create-a-comment.
-  Returns undefined if the patch doesn't contain the given line number.
+  Returns `undefined` if the patch doesn't contain the given line number.
 
 * **[getBranchName](src/get-branch-name.ts)** <br>
   determines the name of the branch involved in the given Github event
