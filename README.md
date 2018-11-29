@@ -6,8 +6,8 @@ _A collection of high-level tools to build Github bots using [Probot](https://pr
 
 <a textrun="all-exported">
 
-- **[downloadPatch](src/download-patch.ts)** <br>
-  exports an async function that downloads the patch for the given SHA
+- **[downloadPullrequestPatch](src/download-pullrequest-patch.ts)** <br>
+  downloads the patch for the given pull request
 
 - **[findPatchLine](src/find-patch-line.ts)** <br>
   Takes a line number in a file

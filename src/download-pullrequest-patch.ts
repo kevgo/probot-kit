@@ -1,6 +1,6 @@
 import request from 'request-promise-native'
 
-// Exports an async function that downloads the patch for the given SHA.
+// downloads the patch for the given pull request
 export default async function(
   org: string,
   repo: string,
