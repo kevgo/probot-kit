@@ -18,6 +18,9 @@ _A collection of high-level tools to build Github bots using [Probot](https://pr
 * **[getBranchName](src/get-branch-name.ts)** <br>
   determines the name of the branch involved in the given Github event
 
+* **[getCommitAuthorName](src/get-commit-author-name.ts)** <br>
+  returns the username for the head commit of the given Github event
+
 * **[getRepoBranchName](src/get-repo-branch-name.ts)** <br>
   returns the name of the repository in which the activity described by the context happens,
   in the format {repoName}/{branchName}

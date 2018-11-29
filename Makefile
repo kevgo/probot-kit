@@ -31,3 +31,4 @@ spec: lint test doc    # runs all tests
 
 test:   # runs the unit tests
 	mocha
+.PHONY: test
