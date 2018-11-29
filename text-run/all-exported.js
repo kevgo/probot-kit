@@ -84,8 +84,8 @@ function documentedExports(nodes) {
         signature,
         desc: comments
           .join(' ')
-          .replace(/^: /, '')
           .replace(/\.$/, '')
+          .replace(/^\s*/, '')
           .toLocaleLowerCase()
       })
       signature = ''
