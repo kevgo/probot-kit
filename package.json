@@ -1,7 +1,7 @@
 {
   "name": "probot-kit",
   "description": "A collection of high-level tools to build Github bots using Probot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
   "dependencies": {
     "follow-redirects": "1.5.10",
@@ -29,5 +29,12 @@
     "ts-node": "7.0.1",
     "tslint": "5.11.0",
     "typescript": "3.1.6"
-  }
+  },
+  "files": [
+    "dist",
+    "yarn.lock"
+  ],
+  "homepage": "https://github.com/kevgo/probot-kit",
+  "license": "ISC",
+  "main": "dist/index.js"
 }
