@@ -1,7 +1,10 @@
 import { Context } from 'probot'
 
 // Iterates all files of the current commit
-export default async function(context: Context, processor: (any) => void) {
+export default async function(
+  context: Context,
+  processor: (file: any) => void
+) {
   const changes = await context.github.repos.compareCommits(
     context.repo({
       base: context.payload.before,

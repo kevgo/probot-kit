@@ -1,5 +1,5 @@
-import * as fs from "fs"
-import * as path from "path"
+import * as fs from 'fs'
+import * as path from 'path'
 
 // Provides functions to unpack a TAR file
 export default class TarUnpacker {
@@ -12,11 +12,11 @@ export default class TarUnpacker {
   // called with the data for a TAR file entry
   unpackEntry(header, bodyStream, rootDir, next) {
     const entryPath = path.join(rootDir, header.name)
-    if (header.type === "directory") {
+    if (header.type === 'directory') {
       this.extractDirectoryEntry(entryPath, next)
-    } else if (header.type === "file") {
+    } else if (header.type === 'file') {
       this.extractFileEntry(entryPath, bodyStream, next)
-    } else if (header.type === "symlink") {
+    } else if (header.type === 'symlink') {
       this.extractSymlinkEntry(next)
     } else {
       throw new Error(`UNKNOWN HEADER TYPE: ${header.type}`)
@@ -27,7 +27,7 @@ export default class TarUnpacker {
   // Calls next when done.
   private extractDirectoryEntry(dirPath: string, next: () => void) {
     if (this.debug) {
-      console.log("creating directory:", dirPath)
+      console.log('creating directory:', dirPath)
     }
     // TODO: make async
     if (!fs.existsSync(dirPath)) {
@@ -40,10 +40,10 @@ export default class TarUnpacker {
   // Calls next when done.
   private extractFileEntry(filePath: string, bodyStream, next: () => void) {
     if (this.debug) {
-      console.log("creating file:", filePath)
+      console.log('creating file:', filePath)
     }
     const fileStream = fs.createWriteStream(filePath)
-    bodyStream.on("end", next)
+    bodyStream.on('end', next)
     bodyStream.pipe(fileStream)
   }
 

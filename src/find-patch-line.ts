@@ -5,7 +5,11 @@ import parseDiff, { AddChange, NormalChange } from 'parse-diff'
 // according to https://developer.github.com/v3/pulls/comments/#create-a-comment
 // or falsy if the patch doesn't contain the given line number.
 // The patch must be downloaded by the downloadPatch function.
-export default function(patchText, filename, lineNumber) {
+export default function(
+  patchText: string,
+  filename: string,
+  lineNumber: number
+): number | undefined {
   // find the text of the line in question
   let lineText = ''
   for (const file of parseDiff(patchText)) {

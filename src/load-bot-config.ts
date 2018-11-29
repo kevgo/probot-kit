@@ -6,7 +6,10 @@ import loadFile from './load-file'
 // Loads the bot configuration file with the given name.
 // The file is assumed to be in YML format.
 // Returns the file content as a JS object.
-export default async function(filename: string, context: Context) {
+export default async function(
+  filename: string,
+  context: Context
+): Promise<any> {
   const repoName = getRepoName(context)
   let configText = ''
   try {
