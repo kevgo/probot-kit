@@ -36,5 +36,8 @@
   ],
   "homepage": "https://github.com/kevgo/probot-kit",
   "license": "ISC",
-  "main": "dist/index.js"
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "make"
+  }
 }
