@@ -3,7 +3,10 @@ import getBranchName from './get-branch-name'
 
 // Loads the given file from GitHub.
 // Returns the content and the SHA.
-export default async function(filepath: string, context: Context) {
+export default async function(
+  filepath: string,
+  context: Context
+): Promise<[string, string]> {
   const content = await context.github.repos.getContents(
     context.repo({ path: filepath, ref: getBranchName(context) })
   )

@@ -13,6 +13,7 @@ function actualExports() {
   const files = fs
     .readdirSync(path.join('..', 'src'))
     .filter(file => file !== 'index.ts')
+    .filter(isFile)
   const actuals = []
   for (const filename of files) {
     const filePath = path.join('..', 'src', filename)
@@ -50,6 +51,10 @@ function actualExports() {
     }
   }
   return actuals
+}
+
+function isFile(filename) {
+  return fs.statSync(path.join('..', 'src', filename)).isFile()
 }
 
 function functionName(filename) {

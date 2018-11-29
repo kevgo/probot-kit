@@ -1,7 +1,11 @@
 import request from 'request-promise-native'
 
 // Exports an async function that downloads the patch for the given SHA.
-export default async function downloadPatch(org, repo, pullRequestNumber) {
+export default async function(
+  org: string,
+  repo: string,
+  pullRequestNumber: string
+): Promise<string> {
   const requestData = {
     headers: {
       Accept: 'application/vnd.github.v3.diff',
