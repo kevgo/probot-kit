@@ -1,5 +1,7 @@
 # ProbotKit
 
+[![CircleCI](https://circleci.com/gh/kevgo/probot-kit.svg?style=shield)](https://circleci.com/gh/kevgo/probot-kit)
+
 _A collection of high-level tools to build Github bots using [Probot](https://probot.github.io)._
 
 <a textrun="all-exported">
