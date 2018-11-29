@@ -14,6 +14,7 @@ function actualExports() {
     .readdirSync(path.join('..', 'src'))
     .filter(file => file !== 'index.ts')
     .filter(isFile)
+    .sort()
   const actuals = []
   for (const filename of files) {
     const filePath = path.join('..', 'src', filename)
