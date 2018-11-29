@@ -8,9 +8,9 @@ import getSha from './get-sha'
 export default function(context: Context): string {
   return (
     getRepoName(context) +
-    '/' +
+    '|' +
     getBranchName(context) +
-    '/' +
+    '|' +
     getSha(context).substring(0, 7)
   )
 }
