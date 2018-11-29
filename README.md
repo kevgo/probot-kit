@@ -21,12 +21,15 @@ _A collection of high-level tools to build Github bots using [Probot](https://pr
 * **[getCommitAuthorName](src/get-commit-author-name.ts)** <br>
   returns the username for the head commit of the given Github event
 
-* **[getRepoBranchName](src/get-repo-branch-name.ts)** <br>
+* **[getRepoBranchSha](src/get-repo-branch-sha.ts)** <br>
   returns the name of the repository in which the activity described by the context happens,
   in the format {repoName}/{branchName}
 
 * **[getRepoName](src/get-repo-name.ts)** <br>
-  Returns the name of the repository in which the activity described by the context happens
+  returns the name of the repository in which the activity described by the context happens
+
+* **[getSha](src/get-sha.ts)** <br>
+  returns the SHA1 of the head commit for the given Github event
 
 * **[iterateCurrentCommitFiles](src/iterate-current-commit-files.ts)** <br>
   iterates all files of the current commit

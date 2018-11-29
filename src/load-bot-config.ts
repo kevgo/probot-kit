@@ -1,6 +1,6 @@
 import yml from 'js-yaml'
 import { Context } from 'probot'
-import getRepoName from './get-repo-branch-name'
+import getRepoBranchSha from './get-repo-branch-sha'
 import loadFile from './load-file'
 
 // Loads and parses the bot configuration file with the given name from the repo on Github.
@@ -9,7 +9,7 @@ export default async function(
   filename: string,
   context: Context
 ): Promise<any> {
-  const repoName = getRepoName(context)
+  const repoName = getRepoBranchSha(context)
   let configText = ''
   try {
     // NOTE: Prettier and TSLint disagree on placing a semicolon on the next line
