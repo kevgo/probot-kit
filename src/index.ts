@@ -1,5 +1,5 @@
 import downloadCode from './download-code'
-import downloadPatch from './download-patch'
+import downloadPatch from './download-pullrequest-patch'
 import findPatchLine from './find-patch-line'
 import getBranchName from './get-branch-name'
 import getRepoBranchName from './get-repo-branch-name'

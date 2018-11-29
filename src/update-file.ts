@@ -1,7 +1,7 @@
 import { Context } from 'probot'
 import getBranchName from './get-branch-name'
 
-// Stores the updated content for the given file in the given branch
+// updates the file with the given name to the given content in the given branch
 export default async function(
   filename: string,
   text: string,

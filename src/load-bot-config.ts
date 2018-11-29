@@ -3,9 +3,8 @@ import { Context } from 'probot'
 import getRepoName from './get-repo-branch-name'
 import loadFile from './load-file'
 
-// Loads the bot configuration file with the given name.
+// Loads and parses the bot configuration file with the given name from the repo on Github.
 // The file is assumed to be in YML format.
-// Returns the file content as a JS object.
 export default async function(
   filename: string,
   context: Context
