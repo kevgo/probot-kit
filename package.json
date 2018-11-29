@@ -4,16 +4,25 @@
   "version": "0.0.1",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
   "dependencies": {
-    "probot": "7.4.0"
+    "follow-redirects": "1.5.10",
+    "gunzip-maybe": "1.4.1",
+    "parse-diff": "0.5.1",
+    "probot": "7.4.0",
+    "tar-stream": "1.6.2"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.5",
+    "@types/camelcase": "4.1.0",
+    "@types/chai": "4.1.7",
+    "@types/mocha": "5.2.5",
     "@types/node": "10.12.10",
     "camelcase": "5.0.0",
     "chai": "4.2.0",
     "jsdiff-console": "2.2.1",
+    "mocha": "5.2.0",
     "prettier": "1.15.2",
     "text-runner": "3.6.0",
+    "ts-node": "7.0.1",
     "tslint": "5.11.0",
     "typescript": "3.1.6"
   }

@@ -13,6 +13,9 @@ build: clean  # builds the production version
 clean:  # removes all build artifacts
 	@rm -rf dist
 
+doc:  # checks the documentation
+	node_modules$/.bin$/text-run
+
 help:   # prints all make targets
 	@cat Makefile | grep '^[^ ]*:' | grep -v '.PHONY' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
 
@@ -24,5 +27,7 @@ lint:  # lints the code base
 	node_modules$/.bin$/prettier -l '*.json'
 	node_modules$/.bin$/prettier -l 'src/**'
 
-spec: lint    # runs all tests
-	node_modules$/.bin$/text-run
+spec: lint test doc    # runs all tests
+
+test:   # runs the unit tests
+	mocha
