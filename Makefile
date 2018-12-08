@@ -30,5 +30,5 @@ lint:  # lints the code base
 spec: lint test doc    # runs all tests
 
 test:   # runs the unit tests
-	mocha
+	node_modules$/.bin$/mocha
 .PHONY: test
