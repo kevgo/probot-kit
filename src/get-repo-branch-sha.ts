@@ -6,7 +6,7 @@ import getSha from './get-sha'
 
 // Returns the name of the repository in which the activity described by the context happens,
 // in the format {repoName}/{branchName}.
-export default function(
+export default function getRepoBranchSha(
   context: probot.Context<Webhooks.WebhookPayloadPush>
 ): string {
   return (

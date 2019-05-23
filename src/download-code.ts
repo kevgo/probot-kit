@@ -8,7 +8,12 @@ import TarUnpacker from './download-code-helpers/unpacker'
 
 // Downloads the given SHA and extracts it into a tmp directory.
 // Returns the directory if successful.
-export default function(organization, repository, sha, debug): Promise<string> {
+export default function downloadCode(
+  organization,
+  repository,
+  sha,
+  debug
+): Promise<string> {
   console.log('DOWNLOADING:', sha)
   return new Promise((resolve, reject) => {
     const requestData = createRequestData(organization, repository, sha)

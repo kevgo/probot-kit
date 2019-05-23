@@ -4,7 +4,7 @@ import getBranchName from './get-branch-name'
 
 // Loads the given file from GitHub.
 // Returns the content and the SHA.
-export default async function(
+export default async function loadFile(
   filepath: string,
   context: probot.Context<Webhooks.WebhookPayloadPush>
 ): Promise<[string, string]> {
