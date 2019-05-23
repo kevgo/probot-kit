@@ -1,5 +1,5 @@
 import Webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
+import probot from 'probot'
 
 // determines the name of the branch involved in the given Github event
 export function getBranchName(

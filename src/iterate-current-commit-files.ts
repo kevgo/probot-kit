@@ -1,5 +1,5 @@
 import Webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
+import probot from 'probot'
 
 // Iterates all files of the current commit
 export async function iterateCurrentCommitFiles(

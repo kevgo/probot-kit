@@ -1,5 +1,5 @@
 import Webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
+import probot from 'probot'
 
 // returns the SHA1 of the head commit for the given Github event
 export function getSha(
