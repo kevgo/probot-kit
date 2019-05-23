@@ -6,7 +6,7 @@ import loadFile from './load-file'
 
 // Loads and parses the bot configuration file with the given name from the repo on Github.
 // The file is assumed to be in YML format.
-export default async function(
+export default async function loadBotConfig(
   filename: string,
   context: probot.Context<Webhooks.WebhookPayloadPush>
 ): Promise<any> {
