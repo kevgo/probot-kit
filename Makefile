@@ -27,8 +27,8 @@ lint:  # lints the code base
 	node_modules$/.bin$/prettier -l '*.json'
 	node_modules$/.bin$/prettier -l 'src/**'
 
-spec: lint test doc    # runs all tests
+test: lint unit doc    # runs all tests
 
-test:   # runs the unit tests
+unit:   # runs the unit tests
 	node_modules$/.bin$/mocha
 .PHONY: test

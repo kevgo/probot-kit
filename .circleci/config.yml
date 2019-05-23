@@ -10,4 +10,4 @@ jobs:
     steps:
       - checkout
       - run: yarn
-      - run: make spec
+      - run: make test
