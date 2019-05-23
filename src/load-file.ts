@@ -1,5 +1,5 @@
 import Webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
+import probot from 'probot'
 import { getBranchName } from './get-branch-name'
 
 // Loads the given file from GitHub.

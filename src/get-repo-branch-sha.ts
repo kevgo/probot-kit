@@ -1,5 +1,5 @@
 import Webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
+import probot from 'probot'
 import { getBranchName } from './get-branch-name'
 import { getRepoName } from './get-repo-name'
 import { getSha } from './get-sha'
