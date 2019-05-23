@@ -1,5 +1,5 @@
 // Creates the request data for Github
-export default function createRequestData(
+export function createRequestData(
   organization: string,
   repository: string,
   sha: string

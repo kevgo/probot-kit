@@ -4,7 +4,7 @@ import parseDiff, { AddChange, NormalChange } from 'parse-diff'
 // Returns the line number that Github expects for comments on this patch
 // according to https://developer.github.com/v3/pulls/comments/#create-a-comment.
 // Returns undefined if the patch doesn't contain the given line number.
-export default function findPatchLine(
+export function findPatchLine(
   patchText: string,
   filename: string,
   lineNumber: number

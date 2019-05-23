@@ -2,7 +2,7 @@ import Webhooks from '@octokit/webhooks'
 import * as probot from 'probot'
 
 // Iterates all files of the current commit
-export default async function iterateCurrentCommitFiles(
+export async function iterateCurrentCommitFiles(
   context: probot.Context<Webhooks.WebhookPayloadPush>,
   processor: (file: any) => void
 ) {
