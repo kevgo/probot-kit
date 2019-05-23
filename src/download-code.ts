@@ -3,12 +3,12 @@ import gunzip from 'gunzip-maybe'
 import * as os from 'os'
 import * as path from 'path'
 import tar from 'tar-stream'
-import createRequestData from './download-code-helpers/create-request-data'
-import TarUnpacker from './download-code-helpers/unpacker'
+import { createRequestData } from './download-code-helpers/create-request-data'
+import { TarUnpacker } from './download-code-helpers/unpacker'
 
 // Downloads the given SHA and extracts it into a tmp directory.
 // Returns the directory if successful.
-export default function downloadCode(
+export function downloadCode(
   organization,
   repository,
   sha,

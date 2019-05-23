@@ -1,7 +1,7 @@
 import request from 'request-promise-native'
 
 // downloads the patch for the given pull request
-export default async function downloadPullrequestPatch(
+export async function downloadPullrequestPatch(
   org: string,
   repo: string,
   pullRequestNumber: string

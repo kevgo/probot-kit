@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 // Provides functions to unpack a TAR file
-export default class TarUnpacker {
+export class TarUnpacker {
   debug: boolean
 
   constructor(debug: boolean) {
