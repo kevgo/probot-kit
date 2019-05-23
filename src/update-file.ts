@@ -1,3 +1,4 @@
+import Webhooks from '@octokit/webhooks'
 import { Context } from 'probot'
 import getBranchName from './get-branch-name'
 
@@ -6,7 +7,7 @@ export default async function(
   filename: string,
   text: string,
   sha: string,
-  context: Context
+  context: Context<Webhooks.WebhookPayloadPush>
 ) {
   await context.github.repos.updateFile(
     context.repo({

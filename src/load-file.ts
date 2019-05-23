@@ -1,3 +1,4 @@
+import Webhooks from '@octokit/webhooks'
 import { Context } from 'probot'
 import getBranchName from './get-branch-name'
 
@@ -5,7 +6,7 @@ import getBranchName from './get-branch-name'
 // Returns the content and the SHA.
 export default async function(
   filepath: string,
-  context: Context
+  context: Context<Webhooks.WebhookPayloadPush>
 ): Promise<[string, string]> {
   const content = await context.github.repos.getContents(
     context.repo({ path: filepath, ref: getBranchName(context) })
