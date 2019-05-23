@@ -1,12 +1,14 @@
 import Webhooks from '@octokit/webhooks'
-import { Context } from 'probot'
+import * as probot from 'probot'
 import getBranchName from './get-branch-name'
 import getRepoName from './get-repo-name'
 import getSha from './get-sha'
 
 // Returns the name of the repository in which the activity described by the context happens,
 // in the format {repoName}/{branchName}.
-export default function(context: Context<Webhooks.WebhookPayloadPush>): string {
+export default function(
+  context: probot.Context<Webhooks.WebhookPayloadPush>
+): string {
   return (
     getRepoName(context) +
     '|' +

@@ -1,7 +1,9 @@
 import Webhooks from '@octokit/webhooks'
-import { Context } from 'probot'
+import * as probot from 'probot'
 
 // determines the name of the branch involved in the given Github event
-export default function(context: Context<Webhooks.WebhookPayloadPush>): string {
+export default function(
+  context: probot.Context<Webhooks.WebhookPayloadPush>
+): string {
   return context.payload.ref.replace('refs/heads/', '')
 }
