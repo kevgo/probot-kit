@@ -1,6 +1,6 @@
 import Webhooks from '@octokit/webhooks'
 import yml from 'js-yaml'
-import { Context } from 'probot'
+import * as probot from 'probot'
 import getRepoBranchSha from './get-repo-branch-sha'
 import loadFile from './load-file'
 
@@ -8,7 +8,7 @@ import loadFile from './load-file'
 // The file is assumed to be in YML format.
 export default async function(
   filename: string,
-  context: Context<Webhooks.WebhookPayloadPush>
+  context: probot.Context<Webhooks.WebhookPayloadPush>
 ): Promise<any> {
   const repoName = getRepoBranchSha(context)
   let configText = ''
