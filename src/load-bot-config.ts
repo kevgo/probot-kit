@@ -1,14 +1,16 @@
-import Webhooks from '@octokit/webhooks'
+import webhooks from '@octokit/webhooks'
 import yml from 'js-yaml'
-import probot from 'probot'
+import * as probot from 'probot'
 import { getRepoBranchSha } from './get-repo-branch-sha'
 import { loadFile } from './load-file'
 
-// Loads and parses the bot configuration file with the given name from the repo on Github.
-// The file is assumed to be in YML format.
+/**
+ * Loads and parses the bot configuration file with the given name from the repo on Github.
+ * The file is assumed to be in YML format.
+ */
 export async function loadBotConfig(
   filename: string,
-  context: probot.Context<Webhooks.WebhookPayloadPush>
+  context: probot.Context<webhooks.WebhookPayloadPush>
 ): Promise<any> {
   const repoName = getRepoBranchSha(context)
   let configText = ''

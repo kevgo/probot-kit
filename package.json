@@ -1,23 +1,22 @@
 {
   "name": "probot-kit",
   "description": "A collection of high-level tools to build Github bots using Probot",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
   "dependencies": {
     "@octokit/webhooks": ">=6.0.0",
-    "follow-redirects": "1.7.0",
+    "got": "9.6.0",
     "gunzip-maybe": "1.4.1",
     "js-yaml": "3.13.1",
     "parse-diff": "0.5.1",
     "probot": ">=9.0.0",
-    "request": "2.88.0",
-    "request-promise-native": "1.0.7",
     "tar-stream": "2.0.1"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.6",
     "@types/chai": "4.1.7",
     "@types/express": "4.16.1",
+    "@types/got": "9.4.4",
     "@types/ioredis": "4.0.10",
     "@types/js-yaml": "3.12.1",
     "@types/lru-cache": "5.1.0",

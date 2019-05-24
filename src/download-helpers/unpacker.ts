@@ -3,7 +3,7 @@ import path from 'path'
 import stream from 'stream'
 import tar from 'tar-stream'
 
-// Provides functions to unpack a TAR file
+/** Helps unpack a TAR file */
 export class TarUnpacker {
   debug: boolean
 
