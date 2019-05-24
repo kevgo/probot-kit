@@ -1,9 +1,9 @@
-import Webhooks from '@octokit/webhooks'
-import probot from 'probot'
+import webhooks from '@octokit/webhooks'
+import * as probot from 'probot'
 
 /** Iterates all files of the current commit. */
 export async function iterateCurrentCommitFiles(
-  context: probot.Context<Webhooks.WebhookPayloadPush>,
+  context: probot.Context<webhooks.WebhookPayloadPush>,
   processor: (file: any) => void
 ) {
   const changes = await context.github.repos.compareCommits(

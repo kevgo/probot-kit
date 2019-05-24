@@ -1,6 +1,6 @@
 import webhooks from '@octokit/webhooks'
 import yml from 'js-yaml'
-import probot from 'probot'
+import * as probot from 'probot'
 import { getRepoBranchSha } from './get-repo-branch-sha'
 import { loadFile } from './load-file'
 

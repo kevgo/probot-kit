@@ -1,5 +1,5 @@
-import Webhooks from '@octokit/webhooks'
-import probot from 'probot'
+import webhooks from '@octokit/webhooks'
+import * as probot from 'probot'
 import { getBranchName } from './get-branch-name'
 
 /**
@@ -8,7 +8,7 @@ import { getBranchName } from './get-branch-name'
  */
 export async function loadFile(
   filepath: string,
-  context: probot.Context<Webhooks.WebhookPayloadPush>
+  context: probot.Context<webhooks.WebhookPayloadPush>
 ): Promise<[string, string]> {
   const content = await context.github.repos.getContents(
     context.repo({ path: filepath, ref: getBranchName(context) })

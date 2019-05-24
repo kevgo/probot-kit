@@ -1,5 +1,5 @@
-import Webhooks from '@octokit/webhooks'
-import probot from 'probot'
+import webhooks from '@octokit/webhooks'
+import * as probot from 'probot'
 import { getBranchName } from './get-branch-name'
 import { getRepoName } from './get-repo-name'
 import { getSha } from './get-sha'
@@ -9,7 +9,7 @@ import { getSha } from './get-sha'
  * in the format {repoName}/{branchName}.
  */
 export function getRepoBranchSha(
-  context: probot.Context<Webhooks.WebhookPayloadPush>
+  context: probot.Context<webhooks.WebhookPayloadPush>
 ): string {
   return (
     getRepoName(context) +
