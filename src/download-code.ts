@@ -5,8 +5,10 @@ import path from 'path'
 import tar from 'tar-stream'
 import { TarUnpacker } from './download-helpers/unpacker'
 
-// Downloads the given SHA and extracts it into a tmp directory.
-// Returns the directory if successful.
+/**
+ * Downloads the given SHA and extracts it into a tmp directory.
+ * Returns the directory if successful.
+ */
 export async function downloadCode(
   organization,
   repository,

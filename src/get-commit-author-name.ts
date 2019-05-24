@@ -1,7 +1,7 @@
 import Webhooks from '@octokit/webhooks'
 import probot from 'probot'
 
-// returns the username for the head commit of the given Github event
+/** Returns the username for the head commit of the given Github event. */
 export function getCommitAuthorName(
   context: probot.Context<Webhooks.WebhookPayloadPush>
 ): string {

@@ -1,6 +1,6 @@
 import got from 'got'
 
-// downloads the patch for the given pull request
+/** Downloads the patch for the given pull request */
 export async function downloadPullrequestPatch(
   org: string,
   repo: string,

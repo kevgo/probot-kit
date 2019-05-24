@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-// Provides functions to unpack a TAR file
+/** Helps unpack a TAR file */
 export class TarUnpacker {
   debug: boolean
 

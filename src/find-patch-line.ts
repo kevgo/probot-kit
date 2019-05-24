@@ -1,9 +1,11 @@
 import parseDiff, { AddChange, NormalChange } from 'parse-diff'
 
-// Takes a line number in a file and a patch downloaded by the downloadPatch function.
-// Returns the line number that Github expects for comments on this patch
-// according to https://developer.github.com/v3/pulls/comments/#create-a-comment.
-// Returns undefined if the patch doesn't contain the given line number.
+/**
+ * Takes a line number in a file and a patch downloaded by the downloadPatch function.
+ * Returns the line number that Github expects for comments on this patch
+ * according to https://developer.github.com/v3/pulls/comments/#create-a-comment.
+ * Returns undefined if the patch doesn't contain the given line number.
+ */
 export function findPatchLine(
   patchText: string,
   filename: string,

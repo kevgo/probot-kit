@@ -2,8 +2,10 @@ import Webhooks from '@octokit/webhooks'
 import probot from 'probot'
 import { getBranchName } from './get-branch-name'
 
-// Loads the given file from GitHub.
-// Returns the content and the SHA.
+/**
+ * Loads the given file from GitHub.
+ * Returns the content and the SHA.
+ */
 export async function loadFile(
   filepath: string,
   context: probot.Context<Webhooks.WebhookPayloadPush>

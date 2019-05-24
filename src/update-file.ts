@@ -2,7 +2,7 @@ import Webhooks from '@octokit/webhooks'
 import probot from 'probot'
 import { getBranchName } from './get-branch-name'
 
-// updates the file with the given name to the given content in the given branch
+/** Updates the file with the given name to the given content in the given branch. */
 export async function updateFile(
   filename: string,
   text: string,

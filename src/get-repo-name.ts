@@ -1,7 +1,7 @@
 import Webhooks from '@octokit/webhooks'
 import probot from 'probot'
 
-// returns the name of the repository in which the activity described by the context happens
+/** Returns the name of the repository in which the activity described by the context happens. */
 export function getRepoName(
   context: probot.Context<Webhooks.WebhookPayloadPush>
 ): string {

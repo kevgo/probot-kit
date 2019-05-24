@@ -4,8 +4,10 @@ import probot from 'probot'
 import { getRepoBranchSha } from './get-repo-branch-sha'
 import { loadFile } from './load-file'
 
-// Loads and parses the bot configuration file with the given name from the repo on Github.
-// The file is assumed to be in YML format.
+/**
+ * Loads and parses the bot configuration file with the given name from the repo on Github.
+ * The file is assumed to be in YML format.
+ */
 export async function loadBotConfig(
   filename: string,
   context: probot.Context<webhooks.WebhookPayloadPush>

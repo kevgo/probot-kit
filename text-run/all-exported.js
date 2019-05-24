@@ -24,8 +24,14 @@ function actualExports() {
     for (const line of lines) {
       if (line.startsWith('import')) continue
       if (line === '') continue
-      if (line.startsWith('//')) {
-        comments.push(line.replace('// ', ''))
+      if (line.startsWith('/** ')) {
+        comments.push(line.replace('/** ', '').replace(' */', ''))
+        continue
+      }
+      if (line.startsWith('/**')) continue
+      if (line.startsWith(' */')) continue
+      if (line.startsWith(' * ')) {
+        comments.push(line.replace(' * ', ''))
         continue
       }
       actuals.push({
