@@ -18,11 +18,11 @@ export async function downloadCode(
   console.log('DOWNLOADING CODE:', sha)
   const url = `https://api.github.com/repos/${organization}/${repository}/tarball/${sha}`
   const responseStream = await got.stream(url, {
+    followRedirect: true,
     headers: {
       Accept: 'application/vnd.github.v3.raw',
       Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
-      'User-Agent': 'Probot-Kit',
-      followRedirect: true
+      'User-Agent': 'Probot-Kit'
     }
   })
   const tarExtractor = tar.extract()
