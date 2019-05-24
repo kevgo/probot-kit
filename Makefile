@@ -14,7 +14,7 @@ clean:  # removes all build artifacts
 	@rm -rf dist
 
 doc:  # checks the documentation
-	node_modules$/.bin$/text-run
+	node_modules$/.bin$/text-run --format dot
 
 help:   # prints all make targets
 	@cat Makefile | grep '^[^ ]*:' | grep -v '.PHONY' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
