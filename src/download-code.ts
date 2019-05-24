@@ -9,16 +9,16 @@ import { TarUnpacker } from './download-code-helpers/unpacker'
 // Downloads the given SHA and extracts it into a tmp directory.
 // Returns the directory if successful.
 export function downloadCode(
-  organization,
-  repository,
-  sha,
-  debug
+  organization: string,
+  repository: string,
+  sha: string,
+  debug: boolean
 ): Promise<string> {
   console.log('DOWNLOADING:', sha)
   return new Promise((resolve, reject) => {
     const requestData = createRequestData(organization, repository, sha)
     // TODO: make async
-    const request = https.get(requestData, res => {
+    const request = https.get(requestData, (res: any) => {
       const tarExtractor = tar.extract()
       const unpacker = new TarUnpacker(debug)
       tarExtractor.on('entry', unpacker.unpackEntry.bind(unpacker))
