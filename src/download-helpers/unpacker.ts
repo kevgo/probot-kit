@@ -1,5 +1,7 @@
 import fs from 'fs'
 import path from 'path'
+import stream from 'stream'
+import tar from 'tar-stream'
 
 /** Helps unpack a TAR file */
 export class TarUnpacker {
@@ -10,7 +12,12 @@ export class TarUnpacker {
   }
 
   // called with the data for a TAR file entry
-  unpackEntry(header, bodyStream, rootDir, next) {
+  unpackEntry(
+    header: tar.Headers,
+    bodyStream: stream.PassThrough,
+    rootDir: string,
+    next: () => void
+  ) {
     const entryPath = path.join(rootDir, header.name)
     if (header.type === 'directory') {
       this.extractDirectoryEntry(entryPath, next)
@@ -38,7 +45,11 @@ export class TarUnpacker {
 
   // Writes a file containing the content of the given stream at the given path.
   // Calls next when done.
-  private extractFileEntry(filePath: string, bodyStream, next: () => void) {
+  private extractFileEntry(
+    filePath: string,
+    bodyStream: stream.PassThrough,
+    next: () => void
+  ) {
     if (this.debug) {
       console.log('creating file:', filePath)
     }

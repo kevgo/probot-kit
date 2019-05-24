@@ -10,10 +10,10 @@ import { TarUnpacker } from './download-helpers/unpacker'
  * Returns the directory if successful.
  */
 export async function downloadCode(
-  organization,
-  repository,
-  sha,
-  debug
+  organization: string,
+  repository: string,
+  sha: string,
+  debug: boolean
 ): Promise<string> {
   console.log('DOWNLOADING CODE:', sha)
   const url = `https://api.github.com/repos/${organization}/${repository}/tarball/${sha}`
