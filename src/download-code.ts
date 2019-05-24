@@ -9,7 +9,7 @@ import { TarUnpacker } from './download-helpers/unpacker'
  * Downloads the given SHA and extracts it into a tmp directory.
  * Returns the directory if successful.
  */
-export function downloadCode(
+export async function downloadCode(
   organization: string,
   repository: string,
   sha: string,
