@@ -4,12 +4,12 @@
   "version": "0.1.1",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
   "dependencies": {
-    "@octokit/webhooks": "6.2.2",
+    "@octokit/webhooks": ">=6.0.0",
     "follow-redirects": "1.7.0",
     "gunzip-maybe": "1.4.1",
     "js-yaml": "3.13.1",
     "parse-diff": "0.5.1",
-    "probot": "9.2.12",
+    "probot": ">=9.0.0",
     "request": "2.88.0",
     "request-promise-native": "1.0.7",
     "tar-stream": "2.0.1"
@@ -32,8 +32,7 @@
     "typescript": "3.4.5"
   },
   "files": [
-    "dist",
-    "yarn.lock"
+    "dist"
   ],
   "homepage": "https://github.com/kevgo/probot-kit",
   "license": "ISC",
