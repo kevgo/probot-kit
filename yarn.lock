@@ -1990,14 +1990,6 @@ jsdiff-console@2.2.1:
     chalk "^1.1.1"
     diff "^2.2.1"
 
-jsdiff-console@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/jsdiff-console/-/jsdiff-console-3.0.1.tgz#d28e59321221e26a35219a1cc00e74fa24c71368"
-  integrity sha512-SJhZP8vODxa5sW6noRSbVa2QRaW/JD81hbdQEkhFNyYJIMDgL68AQ36UMpz2BSGJEYsj+DYJfPqR3MpZgvzcbw==
-  dependencies:
-    chalk "2.4.2"
-    diff "4.0.1"
-
 jsesc@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-1.3.0.tgz#46c3fec8c1892b12b0833db9bc7622176dbab34b"
