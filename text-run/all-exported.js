@@ -55,7 +55,7 @@ function documentedExports(nodes) {
   let inLink = false
   let signature = ""
   let comments = []
-  result = []
+  const result = []
   for (const node of nodes) {
     if (node.type === "link_open") {
       inLink = true
