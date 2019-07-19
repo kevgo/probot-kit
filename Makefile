@@ -13,7 +13,7 @@ build: clean  # builds the production version
 clean:  # removes all build artifacts
 	@rm -rf dist
 
-doc:  # checks the documentation
+docs:  # checks the documentation
 	node_modules$/.bin$/text-run --format dot
 
 fix:  # runs all automated code repair tools
@@ -38,7 +38,7 @@ lint:  # lints the code base
 	node_modules$/.bin$/prettier -l 'test/*.ts'
 	node_modules$/.bin$/prettier -l 'text-run/**'
 
-test: lint unit doc    # runs all tests
+test: lint unit docs    # runs all tests
 
 unit:   # runs the unit tests
 	node_modules$/.bin$/mocha
