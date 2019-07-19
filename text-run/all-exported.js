@@ -20,7 +20,7 @@ function actualExports() {
     const filePath = path.join("..", "src", filename)
     const fileContent = fs.readFileSync(filePath, "utf8")
     const lines = fileContent.split("\r\n")
-    let comments = []
+    const comments = []
     for (const line of lines) {
       if (line.startsWith("import")) continue
       if (line === "") continue
