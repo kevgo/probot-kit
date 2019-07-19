@@ -44,7 +44,7 @@ function actualExports() {
       break
     }
   }
-  return actuals.join('')
+  return actuals.join("")
 }
 
 function isFile(filename) {
@@ -83,5 +83,5 @@ function documentedExports(nodes) {
       comments = []
     }
   }
-  return result.join('')
+  return result.join("")
 }
