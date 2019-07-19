@@ -1,12 +1,12 @@
 const camelCase = require("camelcase")
 const fs = require("fs")
 const path = require("path")
-const jsdiff = require("jsdiff-console")
+const assertNoDiff = require("assert-no-diff")
 
 module.exports = function({ nodes }) {
   const documented = documentedExports(nodes)
   const actual = actualExports()
-  jsdiff.trimmedLines(actual, documented)
+  assertNoDiff.trimmedLines(actual, documented)
 }
 
 function actualExports() {
