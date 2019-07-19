@@ -1,6 +1,6 @@
-import webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
-import { getBranchName } from './get-branch-name'
+import webhooks from "@octokit/webhooks"
+import * as probot from "probot"
+import { getBranchName } from "./get-branch-name"
 
 /**
  * Loads the given file from GitHub.
@@ -14,7 +14,7 @@ export async function loadFile(
     context.repo({ path: filepath, ref: getBranchName(context) })
   )
   return [
-    Buffer.from(content.data.content, 'base64').toString(),
+    Buffer.from(content.data.content, "base64").toString(),
     content.data.sha
   ]
 }

@@ -1,4 +1,4 @@
-import parseDiff, { AddChange, NormalChange } from 'parse-diff'
+import parseDiff, { AddChange, NormalChange } from "parse-diff"
 
 /**
  * Takes a line number in a file and a patch downloaded by the downloadPatch function.
@@ -12,20 +12,20 @@ export function findPatchLine(
   lineNumber: number
 ): number | undefined {
   // find the text of the line in question
-  let lineText = ''
+  let lineText = ""
   for (const file of parseDiff(patchText)) {
     if (file.to !== filename) {
       continue
     }
     for (const hunk of file.chunks) {
       for (const change of hunk.changes) {
-        console.log('CHANGE', change)
+        console.log("CHANGE", change)
         // if (change.del) { continue }
         let line = 0
-        if (change.type === 'normal') {
+        if (change.type === "normal") {
           const normalChange = change as NormalChange
           line = normalChange.ln2
-        } else if (change.type === 'add') {
+        } else if (change.type === "add") {
           const addChange = change as AddChange
           line = addChange.ln
         }
@@ -35,15 +35,15 @@ export function findPatchLine(
       }
     }
   }
-  console.log('TEXT OF LINE WITH ERROR:', lineText)
+  console.log("TEXT OF LINE WITH ERROR:", lineText)
 
-  if (lineText === '') {
+  if (lineText === "") {
     return undefined
   }
 
-  const patchLines = patchText.split('\n')
+  const patchLines = patchText.split("\n")
   const lineIndex = patchLines.findIndex(line => line === lineText)
-  console.log('INDEX OF ERROR LINE IN PATCHFILE:', lineIndex)
-  const firstHunkLine = patchLines.findIndex(line => line.startsWith('@@'))
+  console.log("INDEX OF ERROR LINE IN PATCHFILE:", lineIndex)
+  const firstHunkLine = patchLines.findIndex(line => line.startsWith("@@"))
   return lineIndex - firstHunkLine
 }

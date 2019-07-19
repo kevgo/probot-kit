@@ -1,5 +1,5 @@
-import webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
+import webhooks from "@octokit/webhooks"
+import * as probot from "probot"
 
 /** Returns the username for the head commit of the given Github event. */
 export function getCommitAuthorName(
