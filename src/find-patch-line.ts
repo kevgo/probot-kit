@@ -20,7 +20,6 @@ export function findPatchLine(
     for (const hunk of file.chunks) {
       for (const change of hunk.changes) {
         console.log("CHANGE", change)
-        // if (change.del) { continue }
         let line = 0
         if (change.type === "normal") {
           const normalChange = change as NormalChange
