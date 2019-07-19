@@ -24,6 +24,7 @@ fix:  # runs all automated code repair tools
 	node_modules$/.bin$/prettier --write 'src/**'
 	node_modules$/.bin$/prettier --write 'test/*.ts'
 	node_modules$/.bin$/prettier --write 'text-run/**'
+
 help:   # prints all make targets
 	@cat Makefile | grep '^[^ ]*:' | grep -v '.PHONY' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
 
