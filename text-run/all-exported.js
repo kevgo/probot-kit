@@ -6,7 +6,7 @@ const jsdiff = require('jsdiff-console')
 module.exports = function({ nodes }) {
   const documented = documentedExports(nodes)
   const actual = actualExports()
-  jsdiff(actual, documented)
+  jsdiff.trimmedLines(actual, documented)
 }
 
 function actualExports() {
@@ -44,7 +44,7 @@ function actualExports() {
       break
     }
   }
-  return actuals
+  return actuals.join('')
 }
 
 function isFile(filename) {
@@ -83,5 +83,5 @@ function documentedExports(nodes) {
       comments = []
     }
   }
-  return result
+  return result.join('')
 }
