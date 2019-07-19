@@ -1,9 +1,9 @@
-import camelCase from 'camelcase'
-import * as fs from 'fs'
-import * as path from 'path'
-import * as kit from '../src/index'
+import camelCase from "camelcase"
+import * as fs from "fs"
+import * as path from "path"
+import * as kit from "../src/index"
 
-describe('exported functions', function() {
+describe("exported functions", function() {
   const exported = Object.keys(kit)
   for (const actualFunction of actualFunctions()) {
     it(`exports ${actualFunction}`, function() {
@@ -17,9 +17,9 @@ describe('exported functions', function() {
 // Returns the names of the actually exported functions
 function actualFunctions() {
   return fs
-    .readdirSync(path.join('src'))
-    .filter(file => file !== 'index.ts')
-    .filter(file => file.endsWith('.ts'))
-    .map(file => file.replace('.ts', ''))
+    .readdirSync(path.join("src"))
+    .filter(file => file !== "index.ts")
+    .filter(file => file.endsWith(".ts"))
+    .map(file => file.replace(".ts", ""))
     .map(file => camelCase(file))
 }

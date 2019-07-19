@@ -1,5 +1,5 @@
-import webhooks from '@octokit/webhooks'
-import * as probot from 'probot'
+import webhooks from "@octokit/webhooks"
+import * as probot from "probot"
 
 /** Returns the name of the repository in which the activity described by the context happens. */
 export function getRepoName(
