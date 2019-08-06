@@ -38,7 +38,17 @@ lint:  # lints the code base
 	node_modules$/.bin$/prettier -l 'test/*.ts'
 	node_modules$/.bin$/prettier -l 'text-run/**'
 
-test: lint unit docs    # runs all tests
+test:  # runs all tests
+	@node_modules$/.bin$/tsc --noEmit &
+	@node_modules$/.bin$/tslint --project tsconfig.json &
+	@node_modules$/.bin$/prettier -l '*.md' &
+	@node_modules$/.bin$/prettier -l '*.yml' &
+	@node_modules$/.bin$/prettier -l '*.json' &
+	@node_modules$/.bin$/prettier -l 'src/**' &
+	@node_modules$/.bin$/prettier -l 'test/*.ts' &
+	@node_modules$/.bin$/prettier -l 'text-run/**' &
+	@node_modules$/.bin$/text-run --format dot &
+	@node_modules$/.bin$/mocha
 
 unit:   # runs the unit tests
 	node_modules$/.bin$/mocha
