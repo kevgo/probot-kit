@@ -8,7 +8,7 @@ import { getRepoName } from "./get-repo-name"
 import { getSha } from "./get-sha"
 import { iterateCurrentCommitFiles } from "./iterate-current-commit-files"
 import { loadBotConfig } from "./load-bot-config"
-import { loadFile } from "./load-file"
+import { loadFile, LoadFileResult } from "./load-file"
 import { updateFile } from "./update-file"
 
 export {
@@ -23,5 +23,6 @@ export {
   iterateCurrentCommitFiles,
   loadBotConfig,
   loadFile,
+  LoadFileResult,
   updateFile
 }

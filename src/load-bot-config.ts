@@ -2,7 +2,7 @@ import webhooks from "@octokit/webhooks"
 import yml from "js-yaml"
 import * as probot from "probot"
 import { getRepoBranchSha } from "./get-repo-branch-sha"
-import { loadFile } from "./load-file"
+import { loadFile, LoadFileResult } from "./load-file"
 
 /**
  * Loads and parses the bot configuration file with the given name from the repo on Github.
@@ -13,17 +13,19 @@ export async function loadBotConfig(
   context: probot.Context<webhooks.WebhookPayloadPush>
 ): Promise<any> {
   const repoName = getRepoBranchSha(context)
-  let configText = ""
+
+  // load the file from GitHub
+  let configFileData: LoadFileResult
   try {
-    // NOTE: Prettier and TSLint disagree on placing a semicolon on the next line
-    // tslint:disable-next-line:whitespace semicolon
-    ;[configText] = await loadFile(filename, context)
+    configFileData = await loadFile(filename, context)
   } catch (e) {
     console.log(`${repoName}: NO ${filename} FOUND`)
     return {}
   }
+
+  // parse the file content
   try {
-    const result = yml.safeLoad(configText)
+    const result = yml.safeLoad(configFileData.content)
     console.log(`${repoName}: BOT CONFIG: ${JSON.stringify(result)}`)
     return result
   } catch (e) {
