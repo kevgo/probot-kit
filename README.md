@@ -9,6 +9,9 @@ _A collection of high-level tools to build Github bots using
 
 <a textrun="all-exported">
 
+* **[currentCommitFiles](src/current-commit-files.ts)** <br>
+  returns all files of the current commit
+
 - **[downloadPullrequestPatch](src/download-pullrequest-patch.ts)** <br>
   downloads the patch for the given pull request
 
@@ -33,9 +36,6 @@ _A collection of high-level tools to build Github bots using
 
 * **[getSha](src/get-sha.ts)** <br> returns the SHA1 of the head commit for the
   given Github event
-
-* **[iterateCurrentCommitFiles](src/iterate-current-commit-files.ts)** <br>
-  iterates all files of the current commit
 
 * **[loadBotConfig](src/load-bot-config.ts)** <br> Loads and parses the bot
   configuration file with the given name from the repo on Github. The file is

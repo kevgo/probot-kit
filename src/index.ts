@@ -1,3 +1,4 @@
+import { currentCommitFiles } from "./current-commit-files"
 import { downloadCode } from "./download-code"
 import { downloadPullrequestPatch } from "./download-pullrequest-patch"
 import { findPatchLine } from "./find-patch-line"
@@ -6,12 +7,12 @@ import { getCommitAuthorName } from "./get-commit-author-name"
 import { getRepoBranchSha } from "./get-repo-branch-sha"
 import { getRepoName } from "./get-repo-name"
 import { getSha } from "./get-sha"
-import { iterateCurrentCommitFiles } from "./iterate-current-commit-files"
 import { loadBotConfig } from "./load-bot-config"
 import { loadFile, LoadFileResult } from "./load-file"
 import { updateFile } from "./update-file"
 
 export {
+  currentCommitFiles,
   downloadCode,
   downloadPullrequestPatch,
   findPatchLine,
@@ -20,7 +21,6 @@ export {
   getRepoBranchSha,
   getRepoName,
   getSha,
-  iterateCurrentCommitFiles,
   loadBotConfig,
   loadFile,
   LoadFileResult,
