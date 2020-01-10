@@ -190,13 +190,6 @@
     "@types/tough-cookie" "*"
     form-data "^2.5.0"
 
-"@types/ioredis@4.0.13":
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.0.13.tgz#2286577c310c13bb9865e182f62b1dbffd6a6564"
-  integrity sha512-3GKQUu5DPIlERomUfhxeLZHbwY3KOANSuCu7iEcFEuCh7pzO5gnLjU4BoBJvy+uQ3TkduU8DLzJIB2iS4d4IAw==
-  dependencies:
-    "@types/node" "*"
-
 "@types/js-yaml@3.12.1":
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.1.tgz#5c6f4a1eabca84792fbd916f0cb40847f123c656"
