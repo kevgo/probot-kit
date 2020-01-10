@@ -19,8 +19,10 @@ export async function loadFile(
   const content = await context.github.repos.getContents(
     context.repo({ path: filepath, ref: getBranchName(context) })
   )
+  const text = (content.data as { content?: string }).content || ""
+  const sha = (content.data as { sha: string }).sha
   return {
-    content: Buffer.from(content.data.content, "base64").toString(),
-    sha: content.data.sha
+    content: Buffer.from(text, "base64").toString(),
+    sha
   }
 }
