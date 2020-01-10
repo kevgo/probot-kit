@@ -21,7 +21,6 @@
     "@types/lru-cache": "5.1.0",
     "@types/mocha": "5.2.7",
     "@types/node": "12.6.9",
-    "@types/request-promise-native": "1.0.16",
     "@types/tar-stream": "1.6.1",
     "assert-no-diff": "3.0.3",
     "camelcase": "5.3.1",
