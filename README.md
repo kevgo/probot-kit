@@ -9,8 +9,8 @@ _A collection of high-level tools to build Github bots using
 
 <a textrun="all-exported">
 
-* **[currentCommitFiles](src/current-commit-files.ts)** <br>
-  returns all files of the current commit
+- **[currentCommitFiles](src/current-commit-files.ts)** <br> returns all files
+  of the current commit
 
 - **[downloadPullrequestPatch](src/download-pullrequest-patch.ts)** <br>
   downloads the patch for the given pull request
@@ -21,30 +21,30 @@ _A collection of high-level tools to build Github bots using
   https://developer.github.com/v3/pulls/comments/#create-a-comment. Returns
   `undefined` if the patch doesn't contain the given line number.
 
-* **[getBranchName](src/get-branch-name.ts)** <br> determines the name of the
+- **[getBranchName](src/get-branch-name.ts)** <br> determines the name of the
   branch involved in the given Github event
 
-* **[getCommitAuthorName](src/get-commit-author-name.ts)** <br> returns the
+- **[getCommitAuthorName](src/get-commit-author-name.ts)** <br> returns the
   username for the head commit of the given Github event
 
-* **[getRepoBranchSha](src/get-repo-branch-sha.ts)** <br> returns the name of
+- **[getRepoBranchSha](src/get-repo-branch-sha.ts)** <br> returns the name of
   the repository in which the activity described by the context happens, in the
   format {repoName}/{branchName}
 
-* **[getRepoName](src/get-repo-name.ts)** <br> returns the name of the
+- **[getRepoName](src/get-repo-name.ts)** <br> returns the name of the
   repository in which the activity described by the context happens
 
-* **[getSha](src/get-sha.ts)** <br> returns the SHA1 of the head commit for the
+- **[getSha](src/get-sha.ts)** <br> returns the SHA1 of the head commit for the
   given Github event
 
-* **[loadBotConfig](src/load-bot-config.ts)** <br> Loads and parses the bot
+- **[loadBotConfig](src/load-bot-config.ts)** <br> Loads and parses the bot
   configuration file with the given name from the repo on Github. The file is
   assumed to be in YML format.
 
-* **[loadFile](src/load-file.ts)** <br> Loads the given file from GitHub.
+- **[loadFile](src/load-file.ts)** <br> Loads the given file from GitHub.
   Returns the content and the SHA.
 
-* **[updateFile](src/update-file.ts)** <br> updates the file with the given name
+- **[updateFile](src/update-file.ts)** <br> updates the file with the given name
   to the given content in the given branch
 
 </a>
