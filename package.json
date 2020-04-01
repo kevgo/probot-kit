@@ -4,32 +4,30 @@
   "version": "0.5.0",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
   "dependencies": {
-    "@octokit/webhooks": ">=7.0.0",
-    "got": "10.2.1",
+    "@octokit/webhooks": ">=7.1.1",
+    "got": "10.7.0",
     "gunzip-maybe": "1.4.1",
     "js-yaml": "3.13.1",
-    "parse-diff": "0.6.0",
-    "probot": ">=9.9.0",
-    "tar-stream": "2.1.0"
+    "parse-diff": "0.7.0",
+    "probot": ">=9.11.2",
+    "tar-stream": "2.1.2"
   },
   "devDependencies": {
     "@types/got": "9.6.9",
-    "@types/js-yaml": "3.12.1",
-    "@types/mocha": "5.2.7",
-    "@types/node": "13.1.6",
-    "@types/tar-stream": "1.6.1",
+    "@types/js-yaml": "3.12.3",
+    "@types/mocha": "7.0.2",
+    "@types/node": "13.9.8",
+    "@types/tar-stream": "2.1.0",
     "assert-no-diff": "3.0.4",
     "camelcase": "5.3.1",
-    "mocha": "7.0.0",
+    "mocha": "7.1.1",
     "prettier": "1.19.1",
-    "text-runner": "4.0.0",
-    "ts-node": "8.6.0",
-    "tslint": "5.20.1",
-    "typescript": "3.7.4"
+    "text-runner": "4.0.2",
+    "ts-node": "8.8.1",
+    "tslint": "6.1.0",
+    "typescript": "3.8.3"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "homepage": "https://github.com/kevgo/probot-kit",
   "license": "ISC",
   "main": "dist/index.js",

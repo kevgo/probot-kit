@@ -51,5 +51,5 @@ test:  # runs all tests
 	@node_modules$/.bin$/mocha
 
 unit:   # runs the unit tests
-	node_modules$/.bin$/mocha
+	node_modules$/.bin$/mocha test/*.test.ts
 .PHONY: test
