@@ -40,6 +40,7 @@ lint:  # lints the code base
 
 test:  # runs all tests
 	@node_modules$/.bin$/tsc --noEmit &
+	@node_modules$/.bin$/mocha test/*.test.ts &
 	@node_modules$/.bin$/tslint --project tsconfig.json &
 	@node_modules$/.bin$/prettier -l '*.md' &
 	@node_modules$/.bin$/prettier -l '*.yml' &
@@ -47,9 +48,8 @@ test:  # runs all tests
 	@node_modules$/.bin$/prettier -l 'src/**' &
 	@node_modules$/.bin$/prettier -l 'test/*.ts' &
 	@node_modules$/.bin$/prettier -l 'text-run/**' &
-	@node_modules$/.bin$/text-run --format dot &
-	@node_modules$/.bin$/mocha
+	@node_modules$/.bin$/text-run --format dot 
 
 unit:   # runs the unit tests
-	node_modules$/.bin$/mocha
+	node_modules$/.bin$/mocha test/*.test.ts
 .PHONY: test
