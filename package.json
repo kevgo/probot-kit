@@ -5,7 +5,7 @@
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
   "dependencies": {
     "@octokit/webhooks": ">=7.1.1",
-    "got": "10.7.0",
+    "got": "11.8.5",
     "gunzip-maybe": "1.4.1",
     "js-yaml": "3.13.1",
     "parse-diff": "0.7.0",
