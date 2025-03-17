@@ -9,5 +9,5 @@ jobs:
 
     steps:
       - checkout
-      - run: yarn
+      - run: npm run setup
       - run: npm run test
