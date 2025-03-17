@@ -32,6 +32,13 @@
   "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
-    "prepublishOnly": "make"
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "docs": "text-run --format dot",
+    "fix": "tslint --project . --fix && prettier --write .",
+    "lint": "tsc --noEmit && tslint --project tsconfig.json &&  prettier -l .",
+    "prepublishOnly": "make",
+    "test": "tsc --noEmit && mocha test/*.test.ts && tslint --project tsconfig.json && prettier -l .",
+    "unit": "mocha test/*.test.ts"
   }
 }
