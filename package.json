@@ -20,14 +20,16 @@
     "@types/tar-stream": "2.1.0",
     "assert-no-diff": "3.0.4",
     "camelcase": "5.3.1",
+    "dprint": "^0.49.0",
     "mocha": "7.1.1",
-    "prettier": "1.19.1",
     "text-runner": "4.0.2",
     "ts-node": "8.8.1",
     "tslint": "6.1.0",
     "typescript": "3.8.3"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/kevgo/probot-kit",
   "license": "ISC",
   "main": "dist/index.js",
@@ -35,11 +37,11 @@
     "build": "tsc",
     "clean": "rm -rf dist",
     "docs": "text-run --format dot",
-    "fix": "tslint --project . --fix && prettier --write .",
-    "lint": "tsc --noEmit && tslint --project tsconfig.json &&  prettier -l .",
-    "prepublishOnly": "make",
+    "fix": "tslint --project . --fix && dprint fmt",
+    "lint": "tsc --noEmit && tslint --project tsconfig.json &&  dprint check",
+    "prepublishOnly": "npm run build",
     "setup": "npm install",
-    "test": "tsc --noEmit && mocha test/*.test.ts && tslint --project tsconfig.json && prettier -l .",
+    "test": "npm run build && npm run fix && npm run unit",
     "unit": "mocha test/*.test.ts"
   }
 }
