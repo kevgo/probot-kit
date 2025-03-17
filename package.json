@@ -1,8 +1,25 @@
 {
   "name": "probot-kit",
-  "description": "A collection of high-level tools to build Github bots using Probot",
   "version": "0.5.0",
+  "description": "A collection of high-level tools to build Github bots using Probot",
+  "homepage": "https://github.com/kevgo/probot-kit",
+  "license": "ISC",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "docs": "text-runner --format=dot",
+    "fix": "tslint --project . --fix && sort-package-json --quiet && dprint fmt",
+    "lint": "tsc --noEmit && tslint --project tsconfig.json && sort-package-json --check --quiet && dprint check",
+    "prepublishOnly": "npm run build",
+    "setup": "npm install",
+    "test": "npm run build && npm run fix && npm run unit",
+    "unit": "mocha test/*.test.ts"
+  },
   "dependencies": {
     "@octokit/webhooks": ">=7.1.1",
     "got": "10.7.0",
@@ -22,26 +39,10 @@
     "camelcase": "5.3.1",
     "dprint": "0.49.0",
     "mocha": "7.1.1",
+    "sort-package-json": "^3.0.0",
     "text-runner": "7.1.0",
     "ts-node": "8.8.1",
     "tslint": "6.1.0",
     "typescript": "3.8.3"
-  },
-  "files": [
-    "dist"
-  ],
-  "homepage": "https://github.com/kevgo/probot-kit",
-  "license": "ISC",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist",
-    "docs": "text-runner --format=dot",
-    "fix": "tslint --project . --fix && dprint fmt",
-    "lint": "tsc --noEmit && tslint --project tsconfig.json &&  dprint check",
-    "prepublishOnly": "npm run build",
-    "setup": "npm install",
-    "test": "npm run build && npm run fix && npm run unit",
-    "unit": "mocha test/*.test.ts"
   }
 }
