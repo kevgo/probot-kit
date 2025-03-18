@@ -27,6 +27,7 @@ function actualExports(): ExportedItem[] {
     .sort()
   const actuals: ExportedItem[] = []
   for (const filename of files) {
+    console.log("11111111", filename)
     const filePath = path.join("..", "src", filename)
     const fileContent = fs.readFileSync(filePath, "utf8")
     const lines = fileContent.split("\r\n")
