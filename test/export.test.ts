@@ -1,7 +1,7 @@
 import camelCase from "camelcase"
 import * as fs from "fs"
 import * as path from "path"
-import * as kit from "../src/index"
+import * as kit from "../src/index.js"
 
 describe("exported functions", function() {
   const exported = Object.keys(kit)
