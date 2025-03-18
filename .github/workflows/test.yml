@@ -24,5 +24,3 @@ jobs:
       - run: npm run test
       - name: Indicate formatting issues
         run: git diff HEAD --exit-code --color
-      # - run: npm run coverage
-      # - uses: coverallsapp/github-action@v2
