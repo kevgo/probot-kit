@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig-build.json",
     "coverage": "node --test --import tsx --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info -- test/*.test.ts",
     "docs": "text-runner --format=dot",
     "fix": "tslint --project . --fix && sort-package-json --quiet && dprint fmt",
@@ -20,31 +20,34 @@
     "reset": "rm -rf dist && npm run build",
     "setup": "npm install",
     "test": "npm run build && npm run fix && npm run unit",
-    "unit": "node --test --import tsx test/*.test.ts"
+    "unit": "node --test --import tsx test/*.test.ts",
+    "update": "npm-check-updates -u && npm install"
   },
   "dependencies": {
-    "@octokit/webhooks": ">=7.1.1",
-    "got": "10.7.0",
-    "gunzip-maybe": "1.4.1",
-    "js-yaml": "3.13.1",
-    "parse-diff": "0.7.0",
-    "probot": ">=9.11.2",
-    "tar-stream": "2.1.2"
+    "@octokit/webhooks": ">=13.7.4",
+    "got": "14.4.6",
+    "gunzip-maybe": "1.4.2",
+    "js-yaml": "4.1.0",
+    "parse-diff": "0.11.1",
+    "probot": ">=13.4.4",
+    "tar-stream": "3.1.7"
   },
   "devDependencies": {
-    "@types/got": "9.6.9",
-    "@types/js-yaml": "3.12.3",
-    "@types/mocha": "7.0.2",
-    "@types/node": "13.9.8",
-    "@types/tar-stream": "2.1.0",
-    "assert-no-diff": "3.0.4",
-    "camelcase": "5.3.1",
+    "@types/got": "9.6.12",
+    "@types/gunzip-maybe": "1.4.2",
+    "@types/js-yaml": "4.0.9",
+    "@types/mocha": "10.0.10",
+    "@types/node": "22.13.10",
+    "@types/tar-stream": "3.1.3",
+    "assert-no-diff": "4.1.0",
+    "camelcase": "8.0.0",
     "dprint": "0.49.0",
-    "mocha": "7.1.1",
-    "sort-package-json": "^3.0.0",
-    "text-runner": "7.1.0",
-    "tslint": "6.1.0",
+    "mocha": "11.1.0",
+    "npm-check-updates": "17.1.15",
+    "sort-package-json": "3.0.0",
+    "text-runner": "7.1.1",
     "tsx": "4.19.3",
-    "typescript": "3.8.3"
+    "tslint": "6.1.3",
+    "typescript": "5.8.2"
   }
 }
