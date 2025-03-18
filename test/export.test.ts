@@ -1,12 +1,13 @@
 import camelCase from "camelcase"
 import * as fs from "fs"
+import { suite, test } from "node:test"
 import * as path from "path"
 import * as kit from "../src/index"
 
-describe("exported functions", function() {
+suite("exported functions", function() {
   const exported = Object.keys(kit)
   for (const actualFunction of actualFunctions()) {
-    it(`exports ${actualFunction}`, function() {
+    test(`exports ${actualFunction}`, function() {
       if (!exported.includes(actualFunction)) {
         throw new Error(`expected [${exported}] to include ${actualFunction}`)
       }
