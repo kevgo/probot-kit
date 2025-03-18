@@ -20,7 +20,8 @@
     "prepublishOnly": "npm run build",
     "setup": "npm install",
     "test": "npm run build && npm run fix && npm run unit",
-    "unit": "mocha test/*.test.ts"
+    "unit": "mocha test/*.test.ts",
+    "update": "npm-check-updates -u && npm install"
   },
   "dependencies": {
     "@octokit/webhooks": ">=7.1.1",
@@ -41,6 +42,7 @@
     "camelcase": "5.3.1",
     "dprint": "0.49.0",
     "mocha": "7.1.1",
+    "npm-check-updates": "^17.1.15",
     "sort-package-json": "^3.0.0",
     "text-runner": "7.1.0",
     "ts-node": "8.8.1",
