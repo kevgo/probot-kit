@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig-build.json",
     "clean": "rm -rf dist",
     "coverage": "node --test --import tsx --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info -- test/*.test.ts",
     "docs": "text-runner --format=dot",
