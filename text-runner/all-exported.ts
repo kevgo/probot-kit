@@ -16,7 +16,7 @@ function actualExports() {
     .filter(file => file !== "index.ts")
     .filter(isFile)
     .sort()
-  let actuals: any[] = []
+  const actuals: any[] = []
   for (const filename of files) {
     const filePath = path.join("..", "src", filename)
     const fileContent = fs.readFileSync(filePath, "utf8")
