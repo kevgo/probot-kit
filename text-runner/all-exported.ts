@@ -4,7 +4,7 @@ import * as fs from "fs"
 import * as path from "path"
 import * as tr from "text-runner"
 
-module.exports = function(action: tr.actions.Args) {
+export default function(action: tr.actions.Args) {
   const documented = documentedExports(action.region)
   const actual = actualExports()
   assertNoDiff.trimmedLines(actual, documented)
