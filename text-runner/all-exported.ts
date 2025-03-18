@@ -7,16 +7,25 @@ import * as tr from "text-runner"
 export default function(action: tr.actions.Args) {
   const documented = documentedExports(action.region)
   const actual = actualExports()
-  assertNoDiff.trimmedLines(actual, documented)
+  const signatures = actual.map((item) => item.signature)
+  action.name(`verify exported functions: ${signatures}`)
+  console.log("DOCUMENTED", documented)
+  console.log("ACTUAL", actual)
+  assertNoDiff.json(actual, documented)
 }
 
-function actualExports() {
+interface ExportedItem {
+  signature: string
+  desc: string
+}
+
+function actualExports(): ExportedItem[] {
   const files = fs
     .readdirSync(path.join("..", "src"))
     .filter(file => file !== "index.ts")
     .filter(isFile)
     .sort()
-  const actuals: any[] = []
+  const actuals: ExportedItem[] = []
   for (const filename of files) {
     const filePath = path.join("..", "src", filename)
     const fileContent = fs.readFileSync(filePath, "utf8")
@@ -41,30 +50,34 @@ function actualExports() {
       break
     }
   }
-  return actuals.join("")
+  return actuals
 }
 
 function isFile(filename: string): boolean {
   return fs.statSync(path.join("..", "src", filename)).isFile()
 }
 
-function documentedExports(nodes: tr.ast.NodeList): string {
+function documentedExports(nodes: tr.ast.NodeList): ExportedItem[] {
   let inLink = false
   let signature = ""
   let comments: string[] = []
-  const result: any[] = []
+  const result: ExportedItem[] = []
   for (const node of nodes) {
     if (node.type === "link_open") {
       inLink = true
+      continue
     }
     if (node.type === "link_close") {
       inLink = false
+      continue
     }
     if (node.type === "text" && inLink) {
       signature += node.content
+      continue
     }
     if (node.type === "text" && !inLink) {
       comments.push(node.content)
+      continue
     }
     if (node.type === "list_item_close") {
       result.push({
@@ -75,5 +88,5 @@ function documentedExports(nodes: tr.ast.NodeList): string {
       comments = []
     }
   }
-  return result.join("")
+  return result
 }
