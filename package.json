@@ -14,8 +14,8 @@
     "build": "tsc -p tsconfig-build.json",
     "coverage": "node --test --import tsx --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info -- test/*.test.ts",
     "docs": "text-runner --format=dot",
-    "fix": "tslint --project . --fix && sort-package-json --quiet && dprint fmt",
-    "lint": "tsc --noEmit && tslint --project tsconfig.json && sort-package-json --check --quiet && dprint check",
+    "fix": "eslint --fix && sort-package-json --quiet && dprint fmt",
+    "lint": "tsc --noEmit && eslint && sort-package-json --check --quiet && dprint check",
     "prepublishOnly": "npm run build",
     "reset": "rm -rf dist && npm run build",
     "setup": "npm install",
@@ -33,6 +33,7 @@
     "tar-stream": "3.1.7"
   },
   "devDependencies": {
+    "@eslint/js": "9.22.0",
     "@types/got": "9.6.12",
     "@types/gunzip-maybe": "1.4.2",
     "@types/js-yaml": "4.0.9",
@@ -42,12 +43,13 @@
     "assert-no-diff": "4.1.0",
     "camelcase": "8.0.0",
     "dprint": "0.49.0",
+    "eslint": "9.22.0",
     "mocha": "11.1.0",
     "npm-check-updates": "17.1.15",
     "sort-package-json": "3.0.0",
     "text-runner": "7.1.1",
     "tsx": "4.19.3",
-    "tslint": "6.1.3",
-    "typescript": "5.8.2"
+    "typescript": "5.8.2",
+    "typescript-eslint": "8.26.1"
   }
 }
