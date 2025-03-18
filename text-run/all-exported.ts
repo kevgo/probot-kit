@@ -55,7 +55,7 @@ function documentedExports(nodes: tr.ast.NodeList): string {
   let inLink = false
   let signature = ""
   let comments: string[] = []
-  const result = []
+  const result: any[] = []
   for (const node of nodes) {
     if (node.type === "link_open") {
       inLink = true
