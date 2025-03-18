@@ -9,8 +9,8 @@ _A collection of high-level tools to build Github bots using
 
 <a type="all-exported">
 
-- **[downloadCode](src/download-code.ts)** <br> downloads the given SHA and
-  extracts it into a tmp directory
+- **[downloadCode](src/download-code.ts)** <br> Downloads the given SHA and
+  extracts it into a tmp directory. Returns the directory if successful.
 
 - **[downloadPullrequestPatch](src/download-pullrequest-patch.ts)** <br>
   downloads the patch for the given pull request

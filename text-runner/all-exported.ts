@@ -7,10 +7,8 @@ import * as tr from "text-runner"
 export default function(action: tr.actions.Args) {
   const documented = documentedExports(action.region)
   const actual = actualExports()
-  const signatures = actual.map(item => item.signature)
+  const signatures = actual.map(item => item.signature).join(", ")
   action.name(`verify exported functions: ${signatures}`)
-  console.log("DOCUMENTED", documented)
-  console.log("ACTUAL", actual)
   assertNoDiff.json(actual, documented)
 }
 
@@ -29,11 +27,9 @@ function actualExports(): ExportedItem[] {
   for (const filename of files) {
     const filePath = path.join("..", "src", filename)
     const fileContent = fs.readFileSync(filePath, "utf8")
-    console.log("111111111111")
     const lines = fileContent.split("\n")
     const comments: string[] = []
     for (const line of lines) {
-      console.log("2222222222222", line)
       if (!line || line.startsWith("import")) continue
       if (line.startsWith("/** ")) {
         comments.push(line.replace("/** ", "").replace(" */", ""))
@@ -45,7 +41,6 @@ function actualExports(): ExportedItem[] {
         comments.push(line.replace(" * ", ""))
         continue
       }
-      console.log("333333333333")
       actuals.push({
         signature: camelCase(filename.replace(/\.ts$/, "")),
         desc: comments.join(" ").toLowerCase().replace(/\.$/, "")
