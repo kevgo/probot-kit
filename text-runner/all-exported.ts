@@ -43,7 +43,7 @@ function actualExports(): ExportedItem[] {
       }
       actuals.push({
         signature: camelCase(filename.replace(/\.ts$/, "")),
-        desc: comments.join(" ").toLowerCase().replace(/\.$/, "")
+        desc: comments.join(" ").replace(/\.$/, "")
       })
       break
     }
@@ -80,7 +80,7 @@ function documentedExports(nodes: tr.ast.NodeList): ExportedItem[] {
     if (node.type === "list_item_close") {
       result.push({
         signature,
-        desc: comments.join(" ").replace(/\.$/, "").replace(/^\s*/, "").replace(/\s+/g, " ").toLocaleLowerCase()
+        desc: comments.join(" ").replace(/\.$/, "").replace(/^\s*/, "").replace(/\s+/g, " ")
       })
       signature = ""
       comments = []
