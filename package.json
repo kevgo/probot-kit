@@ -5,6 +5,7 @@
   "homepage": "https://github.com/kevgo/probot-kit",
   "license": "ISC",
   "author": "Kevin Goslar <kevin.goslar@gmail.com>",
+  "type": "module",
   "main": "dist/index.js",
   "files": [
     "dist"
