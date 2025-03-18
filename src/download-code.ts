@@ -21,7 +21,7 @@ export async function downloadCode(
     followRedirect: true,
     headers: {
       Accept: "application/vnd.github.v3.raw",
-      Authorization: `token ${process.env["GITHUB_ACCESS_TOKEN"]}`,
+      Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
       "User-Agent": "Probot-Kit"
     }
   })
