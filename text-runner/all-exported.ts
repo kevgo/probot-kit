@@ -35,11 +35,8 @@ function actualExports() {
         continue
       }
       actuals.push({
-        desc: comments
-          .join(" ")
-          .toLowerCase()
-          .replace(/\.$/, ""),
-        signature: camelCase(filename.replace(/\.ts$/, ""))
+        signature: camelCase(filename.replace(/\.ts$/, "")),
+        desc: comments.join(" ").toLowerCase().replace(/\.$/, "")
       })
       break
     }
@@ -72,12 +69,7 @@ function documentedExports(nodes: tr.ast.NodeList): string {
     if (node.type === "list_item_close") {
       result.push({
         signature,
-        desc: comments
-          .join(" ")
-          .replace(/\.$/, "")
-          .replace(/^\s*/, "")
-          .replace(/\s+/g, " ")
-          .toLocaleLowerCase()
+        desc: comments.join(" ").replace(/\.$/, "").replace(/^\s*/, "").replace(/\s+/g, " ").toLocaleLowerCase()
       })
       signature = ""
       comments = []
