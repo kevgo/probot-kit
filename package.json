@@ -12,12 +12,12 @@
   ],
   "scripts": {
     "build": "tsc",
-    "clean": "rm -rf dist",
     "coverage": "node --test --import tsx --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info -- test/*.test.ts",
     "docs": "text-runner --format=dot",
     "fix": "tslint --project . --fix && sort-package-json --quiet && dprint fmt",
     "lint": "tsc --noEmit && tslint --project tsconfig.json && sort-package-json --check --quiet && dprint check",
     "prepublishOnly": "npm run build",
+    "reset": "rm -rf dist && npm run build",
     "setup": "npm install",
     "test": "npm run build && npm run fix && npm run unit",
     "unit": "mocha test/*.test.ts"
