@@ -27,12 +27,13 @@ function actualExports(): ExportedItem[] {
     .sort()
   const actuals: ExportedItem[] = []
   for (const filename of files) {
-    console.log("11111111", filename)
     const filePath = path.join("..", "src", filename)
     const fileContent = fs.readFileSync(filePath, "utf8")
-    const lines = fileContent.split("\r\n")
+    console.log("111111111111")
+    const lines = fileContent.split("\n")
     const comments: string[] = []
     for (const line of lines) {
+      console.log("2222222222222", line)
       if (!line || line.startsWith("import")) continue
       if (line.startsWith("/** ")) {
         comments.push(line.replace("/** ", "").replace(" */", ""))
@@ -44,6 +45,7 @@ function actualExports(): ExportedItem[] {
         comments.push(line.replace(" * ", ""))
         continue
       }
+      console.log("333333333333")
       actuals.push({
         signature: camelCase(filename.replace(/\.ts$/, "")),
         desc: comments.join(" ").toLowerCase().replace(/\.$/, "")
