@@ -1,8 +1,7 @@
 # ProbotKit
 
-[![CircleCI](https://circleci.com/gh/kevgo/probot-kit.svg?style=shield)](https://circleci.com/gh/kevgo/probot-kit)
+[![CI](https://github.com/kevgo/probot-kit/actions/workflows/test.yml/badge.svg)](https://github.com/kevgo/probot-kit/actions/workflows/test.yml)
 [![install size](https://packagephobia.now.sh/badge?p=probot-kit)](https://packagephobia.now.sh/result?p=probot-kit)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/kevgo/probot-kit.svg)](https://lgtm.com/projects/g/kevgo/probot-kit/context:javascript)
 
 _A collection of high-level tools to build Github bots using
 [Probot](https://probot.github.io)._
