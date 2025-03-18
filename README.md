@@ -7,7 +7,7 @@
 _A collection of high-level tools to build Github bots using
 [Probot](https://probot.github.io)._
 
-<a textrun="all-exported">
+<a type="all-exported">
 
 - **[downloadCode](src/download-code.ts)** <br> downloads the given SHA and
   extracts it into a tmp directory

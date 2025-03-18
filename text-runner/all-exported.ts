@@ -1,7 +1,7 @@
-const camelCase = require("camelcase")
+import * as assertNoDiff from "assert-no-diff"
+import * as camelCase from "camelcase"
 import * as fs from "fs"
-const path = require("path")
-const assertNoDiff = require("assert-no-diff")
+import * as path from "path"
 import * as tr from "text-runner"
 
 module.exports = function(action: tr.actions.Args) {
