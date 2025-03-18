@@ -1,10 +1,11 @@
 const camelCase = require("camelcase")
-const fs = require("fs")
+import * as fs from "fs"
 const path = require("path")
 const assertNoDiff = require("assert-no-diff")
+import * as tr from "text-runner"
 
-module.exports = function({ nodes }) {
-  const documented = documentedExports(nodes)
+module.exports = function(action: tr.actions.Args) {
+  const documented = documentedExports(action.region)
   const actual = actualExports()
   assertNoDiff.trimmedLines(actual, documented)
 }
@@ -15,15 +16,14 @@ function actualExports() {
     .filter(file => file !== "index.ts")
     .filter(isFile)
     .sort()
-  const actuals = []
+  let actuals: any[] = []
   for (const filename of files) {
     const filePath = path.join("..", "src", filename)
     const fileContent = fs.readFileSync(filePath, "utf8")
     const lines = fileContent.split("\r\n")
-    const comments = []
+    const comments: string[] = []
     for (const line of lines) {
-      if (line.startsWith("import")) continue
-      if (line === "") continue
+      if (!line || line.startsWith("import")) continue
       if (line.startsWith("/** ")) {
         comments.push(line.replace("/** ", "").replace(" */", ""))
         continue
@@ -47,14 +47,14 @@ function actualExports() {
   return actuals.join("")
 }
 
-function isFile(filename) {
+function isFile(filename: string): boolean {
   return fs.statSync(path.join("..", "src", filename)).isFile()
 }
 
-function documentedExports(nodes) {
+function documentedExports(nodes: tr.ast.NodeList): string {
   let inLink = false
   let signature = ""
-  let comments = []
+  let comments: string[] = []
   const result = []
   for (const node of nodes) {
     if (node.type === "link_open") {
