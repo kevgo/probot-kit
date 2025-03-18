@@ -2,7 +2,7 @@ import camelCase from "camelcase"
 import * as fs from "fs"
 import { suite, test } from "node:test"
 import * as path from "path"
-import * as kit from "../src/index"
+import * as kit from "../src/index.js"
 
 suite("exported functions", function() {
   const exported = Object.keys(kit)

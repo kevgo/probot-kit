@@ -1,5 +1,5 @@
 import * as assertNoDiff from "assert-no-diff"
-import * as camelCase from "camelcase"
+import camelCase from "camelcase"
 import * as fs from "fs"
 import * as path from "path"
 import * as tr from "text-runner"
@@ -7,7 +7,7 @@ import * as tr from "text-runner"
 export default function(action: tr.actions.Args) {
   const documented = documentedExports(action.region)
   const actual = actualExports()
-  const signatures = actual.map((item) => item.signature)
+  const signatures = actual.map(item => item.signature)
   action.name(`verify exported functions: ${signatures}`)
   console.log("DOCUMENTED", documented)
   console.log("ACTUAL", actual)

@@ -1,6 +1,6 @@
-import fs from "fs"
-import path from "path"
-import stream from "stream"
+import * as fs from "fs"
+import * as path from "path"
+import * as stream from "stream"
 import tar from "tar-stream"
 
 /** Helps unpack a TAR file */
