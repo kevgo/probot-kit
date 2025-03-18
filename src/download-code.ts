@@ -1,9 +1,9 @@
 import got from "got"
 import gunzip from "gunzip-maybe"
-import os from "os"
-import path from "path"
+import * as os from "os"
+import * as path from "path"
 import tar from "tar-stream"
-import { TarUnpacker } from "./download-helpers/unpacker"
+import { TarUnpacker } from "./download-helpers/unpacker.js"
 
 /**
  * Downloads the given SHA and extracts it into a tmp directory.
@@ -21,7 +21,7 @@ export async function downloadCode(
     followRedirect: true,
     headers: {
       Accept: "application/vnd.github.v3.raw",
-      Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+      Authorization: `token ${process.env["GITHUB_ACCESS_TOKEN"]}`,
       "User-Agent": "Probot-Kit"
     }
   })

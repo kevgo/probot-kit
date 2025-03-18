@@ -10,7 +10,7 @@ export async function downloadPullrequestPatch(
   const response = await got(url, {
     headers: {
       Accept: "application/vnd.github.v3.diff",
-      Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+      Authorization: `token ${process.env["GITHUB_ACCESS_TOKEN"]}`,
       "User-Agent": "Markdown-check-bot"
     }
   })
